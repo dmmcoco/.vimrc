@@ -99,6 +99,9 @@ map mm ZZ
 map sy "+y
 map sp "+p
 
+"在光标处换行,不用再切换到insert模式再enter
+nnoremap <enter> i<enter><esc>
+
 
 
 "md文件中文符号换成英文
@@ -136,7 +139,7 @@ set formatoptions+=mM
 
 
 "设置,w为保存
-nmap <leader>w :w<CR>
+"nmap <leader>w :w<CR>
 
 
 "下面4个插件最后浓缩成的两个典型使用方法:
