@@ -105,23 +105,23 @@ nnoremap <enter> i<enter><esc>
 
 
 "md文件中文符号换成英文
-au BufRead *.md call Biaodian() <CR>
+au BufRead *.md call Biaodian()
 map <F2> :call Biaodian() <CR>
 function Biaodian()
-    %s/“/"/g
-    %s/”/"/g
-    %s/，/,/g
-    %s/。/./g
-    %s/？/?/g
-    %s/〈/</g
-    %s/〉/>/g
-    %s/（/(/g
-    %s/）/)/g
-    %s/：/:/g
-    %s/；/;/g
-    %s/‘/'/g
-    %s/‘/'/g
-    %s/！/!/g
+    silent! %s/“/"/g
+    silent! %s/”/"/g
+    silent! %s/，/,/g
+    silent! %s/。/./g
+    silent! %s/？/?/g
+    silent! %s/〈/</g
+    silent! %s/〉/>/g
+    silent! %s/（/(/g
+    silent! %s/）/)/g
+    silent! %s/：/:/g
+    silent! %s/；/;/g
+    silent! %s/‘/'/g
+    silent! %s/‘/'/g
+    silent! %s/！/!/g
     endfunction
 
 "设置缩进的空格数
