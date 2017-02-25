@@ -332,7 +332,7 @@ inoremap <A-l> <Right>
 "每行超过111字符长度后用不同颜色显示
 augroup vimrc_autocmds
   autocmd CursorHold * highlight OverLength ctermbg=darkgrey guibg=#592929
-  autocmd CursorHold * match OverLength /\%112v.*/
+  autocmd CursorHold * match OverLength /\%114v.*/
 augroup END
 
 "vim-autosave插件的设置
