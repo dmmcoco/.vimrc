@@ -26,7 +26,7 @@ Plugin 'Chiel92/vim-autoformat'
 "下面用vundle安装auto-pairs括号自动配对插件
 Plugin 'jiangmiao/auto-pairs'
 "下面用vundle安装Valloric/YouCompleteMe插件
-"Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 "下面用vundle安装indentLine代码对齐线插件
 Plugin 'Yggdroot/indentLine'
 "下面用vundle安装vim中文文档
@@ -39,6 +39,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'felixhummel/setcolors.vim'
 "下面这个插件用来强制改变jjjjjjjjjjkkkkkkkkkkkllllllll的坏习惯
 Plugin 'takac/vim-hardtime'
+"mac上添加下面状态栏美化,ubuntu等linux下不加
+Plugin 'Lokaltog/vim-powerline'
 "下面这个插件利用vim8的时钟特性自动保存文件,默认第5分钟保存,后来发现这个插件是备份文件,不保存正在编辑的文件,于
 "是弃用 
 "Plugin 'chrisbra/vim-autosave'
@@ -82,6 +84,10 @@ filetype plugin indent on    " required
 """"""""""""for vundle end""""""""""""
 
 
+""""""""macos start"""""
+" fix mac vim delete error, so as set backspace=indent,eol,start
+set backspace=2
+""""""""macos end"""""""
 
 
 "set ruler|noruler"默认开启ruler
@@ -97,24 +103,9 @@ set tabstop=4"tab键占4个字符
 map ; :
 map mm ZZ
 
-"ubuntu下:
-"map sy "+y
-"map sp "+p
-
-"macos下:
-""""""""macos start"""""""
-set clipboard=unnamed
-if has("clipboard")
-    set clipboard=unnamed " copy to the system clipboard
-
-    if has("unnamedplus") " X11 support
-        set clipboard+=unnamedplus
-    endif
-endif
-
 map sy "+y
 map sp "+p
-""""""""macos end"""""""
+
 
 "在光标处换行,不用再切换到insert模式再enter
 nnoremap <enter> i<enter><esc>
