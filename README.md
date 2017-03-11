@@ -1,15 +1,15 @@
 ### 0x01 Install[vim]
 
 #### ubuntu & mostLinux
-cd  
+cd   
 wget https://raw.githubusercontent.com/3xp10it/.vimrc/master/.vimrc_linux -O .vimrc
 
 #### macOS
 [macOS下优先选择用MacVim，不用vim]
-cd  
+cd    
 wget https://raw.githubusercontent.com/3xp10it/.vimrc/master/.vimrc_MacVim -O .vimrc
 
 
 ### 0x02 Install[vimperator]
-cd 
+cd   
 wget https://raw.githubusercontent.com/3xp10it/.vimrc/master/.vimperatorrc -O .vimperatorrc
