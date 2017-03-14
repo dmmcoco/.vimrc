@@ -11,8 +11,7 @@ inoremap <C-h> <Up>
 inoremap <C-l> <Down>
 inoremap <C-j> <Left>
 inoremap <C-k> <Right>
-inoremap <M-k> <M-Up>
-inoremap <M-j> <<M-Down>
+
 
 "set editor='/usr/share/mvim -f +<line> +"sil! call cursor(0, <column>)" <file>'
 set editor='/usr/share/mvim -g -f'
