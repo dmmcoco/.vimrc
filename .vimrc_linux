@@ -93,6 +93,29 @@ set autoindent"自动缩进
 set tabstop=4"tab键占4个字符
 
 
+"下面是插入模式的3个字符内移动的快捷键,结合vim-hardtime在vim-hardtime中设置去除Left,Down,Up,Right的禁用
+"超过当前光标所在位置的移动用f+j+s+字符+hint,或者f+j+w|b的方法移动(f+j为esc的map)
+inoremap <c-h> <Left>
+inoremap <c-j> <Down>
+inoremap <c-k> <Up>
+inoremap <c-l> <Right>
+
+"inoremap <c-b> <esc>bi
+"inoremap <c-e> <esc>ei
+"inoremap <c-w> <esc>wi
+"下面设置插入模式下的单词跳转并进入插入模式
+"设置为leader而不是ctrl是因为ctrl失败,且tmux的修饰键为<ctrl+b>
+imap <leader>b <esc>lbi
+imap <leader>e <esc>lei
+imap <leader>w <esc>lwi
+
+"<c-0>无效,于是用<c-a>
+"ctrl+a在插入模式下跳到当前行开关并进入插入模式
+"ctrl+e在插入模式下跳到当前行末尾并进入插入模式
+inoremap <c-a> <esc>I
+inoremap <c-e> <esc>A
+
+
 "方便操作
 map ; :
 map mm ZZ
@@ -322,18 +345,7 @@ let g:list_of_normal_keys = ["h", "j", "k", "l", "-", "+"]
 let g:list_of_visual_keys = ["h", "j", "k", "l", "-", "+"]
 let g:list_of_insert_keys = []
 
-"下面是插入模式的3个字符内移动的快捷键,结合vim-hardtime在vim-hardtime中设置去除Left,Down,Up,Right的禁用
-"超过当前光标所在位置的移动用f+j+s+字符+hint,或者f+j+w|b的方法移动(f+j为esc的map)
-inoremap <c-h> <Left>
-inoremap <c-j> <Down>
-inoremap <c-k> <Up>
-inoremap <c-l> <Right>
 
-"<c-0>无效,于是用<c-a>
-"ctrl+a在插入模式下跳到当前行开关并进入插入模式
-"ctrl+e在插入模式下跳到当前行末尾并进入插入模式
-inoremap <c-a> <esc>I
-inoremap <c-e> <esc>A
 
 
 "每行超过111字符长度后用不同颜色显示
