@@ -89,7 +89,6 @@ filetype plugin indent on    " required
 set backspace=2
 """"""""macos end"""""""
 
-set pastetoggle=<f7>
 
 "set ruler|noruler"默认开启ruler
 "设置leader键为,
