@@ -89,10 +89,15 @@ filetype plugin indent on    " required
 set backspace=2
 """"""""macos end"""""""
 
+set pastetoggle=<f7>
 
 "set ruler|noruler"默认开启ruler
 "设置leader键为,
 let mapleader=","
+set number"显示行号
+syntax on"自动语法高亮,语法检验
+set autoindent"自动缩进
+set tabstop=4"tab键占4个字符
 
 "下面是插入模式的3个字符内移动的快捷键,结合vim-hardtime在vim-hardtime中设置去除Left,Down,Up,Right的禁用
 "超过当前光标所在位置的移动用f+j+s+字符+hint,或者f+j+w|b的方法移动(f+j为esc的map)
@@ -114,14 +119,6 @@ imap <leader>w <esc>lwi
 "ctrl+e在插入模式下跳到当前行末尾并进入插入模式
 inoremap <c-a> <esc>I
 inoremap <c-e> <esc>A
-
-
-
-
-set number"显示行号
-syntax on"自动语法高亮,语法检验
-set autoindent"自动缩进
-set tabstop=4"tab键占4个字符
 
 
 "方便操作
@@ -376,4 +373,4 @@ imap <silent> <F5> <Plug>MarkdownPreview        " 插入模式
 nmap <silent> <F6> <Plug>StopMarkdownPreview    " 普通模式
 
 imap <silent> <F6> <Plug>StopMarkdownPreview    " 插入模式
-
+"set backupcopy=yes
