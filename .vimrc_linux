@@ -82,7 +82,6 @@ filetype plugin indent on    " required
 """"""""""""for vundle end""""""""""""
 
 
-set pastetoggle=<f7>
 
 
 "set ruler|noruler"默认开启ruler
