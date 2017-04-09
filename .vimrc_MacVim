@@ -1,6 +1,6 @@
 "下面这段是vundle要求的,加到vimrc的开头
 """"""""""""""for vundle""""""""""""""""
-set nocompatible              " be iMproved, required 
+set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -42,7 +42,7 @@ Plugin 'takac/vim-hardtime'
 "mac上添加下面状态栏美化,ubuntu等linux下不加
 Plugin 'Lokaltog/vim-powerline'
 "下面这个插件利用vim8的时钟特性自动保存文件,默认第5分钟保存,后来发现这个插件是备份文件,不保存正在编辑的文件,于
-"是弃用 
+"是弃用
 "Plugin 'chrisbra/vim-autosave'
 "下面这个插件用来安装一个css配色方案插件,后来觉得没有什么作用,不如直接用evening配色方案
 "Plugin 'ap/vim-css-color'
@@ -90,7 +90,7 @@ set backspace=2
 """"""""macos end"""""""
 
 
-"set ruler|noruler"默认开启ruler
+set ruler"macvim默认不开启ruler,vim默认开启ruler
 "设置leader键为,
 let mapleader=","
 set number"显示行号
@@ -152,14 +152,14 @@ function Biaodian()
     silent! %s/‘/'/g
     silent! %s/‘/'/g
     silent! %s/！/!/g
-    endfunction
+endfunction
 
 "设置缩进的空格数
 set shiftwidth=4
 
 "设置tab键为4个空格
 set ts=4
-set expandtab 
+set expandtab
 
 "111字符长度换行用来适配博客md编写
 set textwidth=111
@@ -195,11 +195,11 @@ map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
 function! s:noregexp(pattern) abort
-	return '\V' . escape(a:pattern, '\')
+    return '\V' . escape(a:pattern, '\')
 endfunction
 
 function! s:config() abort
-	return {'converters': [function('s:noregexp')]}
+    return {'converters': [function('s:noregexp')]}
 endfunction
 
 noremap <silent><expr> z/ incsearch#go(<SID>config())
@@ -225,12 +225,12 @@ map z? <Plug>(incsearch-fuzzyspell-?)
 map zg/ <Plug>(incsearch-fuzzyspell-stay)
 "Use both fuzzy & fuzzyspell feature
 function! s:config_fuzzyall(...) abort
-		  return extend(copy({
-		    \   'converters': [
-		    \     incsearch#config#fuzzy#converter(),
-		    \     incsearch#config#fuzzyspell#converter()
-		    \   ],
-		    \ }), get(a:, 1, {}))
+    return extend(copy({
+                \   'converters': [
+                \     incsearch#config#fuzzy#converter(),
+                \     incsearch#config#fuzzyspell#converter()
+                \   ],
+                \ }), get(a:, 1, {}))
 endfunction
 
 noremap <silent><expr> z/ incsearch#go(<SID>config_fuzzyall())
@@ -252,13 +252,13 @@ noremap <silent><expr> zg? incsearch#go(<SID>config_fuzzyall({'is_stay': 1}))
 
 """incsearch.vim x fuzzy x vim-easymotion
 function! s:config_easyfuzzymotion(...) abort
-		  return extend(copy({
-		    \   'converters': [incsearch#config#fuzzy#converter()],
-		    \   'modules': [incsearch#config#easymotion#module()],
-		    \   'keymap': {"\<CR>": '<Over>(easymotion)'},
-		    \   'is_expr': 0,
-		    \   'is_stay': 1
-		    \ }), get(a:, 1, {}))
+    return extend(copy({
+                \   'converters': [incsearch#config#fuzzy#converter()],
+                \   'modules': [incsearch#config#easymotion#module()],
+                \   'keymap': {"\<CR>": '<Over>(easymotion)'},
+                \   'is_expr': 0,
+                \   'is_stay': 1
+                \ }), get(a:, 1, {}))
 endfunction
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 """"""""""end of incsearch-easymotion""""""""""
@@ -268,7 +268,7 @@ noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
 """"""""""""""""""start of easymotion""""""""""""""""""
 "下面这句暂时不确定用意
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
- 
+
 "三键到任意地方
 nmap s <Plug>(easymotion-overwin-f)
 "四键到任意地方
@@ -278,7 +278,7 @@ let g:EasyMotion_smartcase = 1
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-"move to line 
+"move to line
 map <Leader>l <Plug>(easymotion-bd-jk)
 nmap <Leader>l <Plug>(easymotion-overwin-line)
 
@@ -292,13 +292,13 @@ nmap <Leader>l <Plug>(easymotion-overwin-line)
 " EasyMotion.
 
 function! s:incsearch_config(...) abort
-		  return incsearch#util#deepextend(deepcopy({
-		    \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
-		    \   'keymap': {
-		    \     "\<CR>": '<Over>(easymotion)'
-		    \   },
-		    \   'is_expr': 0
-		    \ }), get(a:, 1, {}))
+    return incsearch#util#deepextend(deepcopy({
+                \   'modules': [incsearch#config#easymotion#module({'overwin': 1})],
+                \   'keymap': {
+                \     "\<CR>": '<Over>(easymotion)'
+                \   },
+                \   'is_expr': 0
+                \ }), get(a:, 1, {}))
 endfunction
 
 noremap <silent><expr> /  incsearch#go(<SID>incsearch_config())
@@ -313,7 +313,7 @@ noremap <F3> :Autoformat<CR>
 """""""""start of YCM""""""""""
 "YouCompleteMe相关设置
 set runtimepath+=~/.vim/bundle/YouCompleteMe
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif	"离开插入模式后自动关闭预览窗口"
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif "离开插入模式后自动关闭预览窗口"
 let g:ycm_collect_identifiers_from_tags_files = 1           " 开启 YCM 基于标签引擎
 let g:ycm_collect_identifiers_from_comments_and_strings = 1 " 注释与字符串中的内容也用于补全
 let g:syntastic_ignore_files=[".*\.py$"]
@@ -332,7 +332,7 @@ nnoremap <c-j> :YcmCompleter GoToDefinitionElseDeclaration<CR>|     " 跳转到�
 "let g:ycm_min_num_of_chars_for_completion=2                 " 从第2个键入字符就开始罗列匹配项
 """""""""end of YCM""""""""""
 "vim-colorschemes插件配色
-colorscheme evening 
+colorscheme evening
 "setcolors插件设置自动换配色,vim-colorschemes插件相当于配色库,setcolor插件用于变换其他配色,如果不安装
 "vim-colorschemes插件只安装setcolor插件则没有好的效果
 "考虑到对眼睛不好,暂时关闭下面的自动换色
@@ -342,7 +342,7 @@ colorscheme evening
 
 "下面开启打开文件时自动跳转到上次编辑的地方,vim在/etc/vim/vimrc文件中默认设置关闭
 if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
 "vim-hardtime插件的设置
@@ -355,8 +355,8 @@ let g:list_of_insert_keys = []
 
 "每行超过111字符长度后用不同颜色显示
 augroup vimrc_autocmds
-  autocmd CursorHold * highlight OverLength ctermbg=darkgrey guibg=#592929
-  autocmd CursorHold * match OverLength /\%114v.*/
+    autocmd CursorHold * highlight OverLength ctermbg=darkgrey guibg=#592929
+    autocmd CursorHold * match OverLength /\%114v.*/
 augroup END
 
 "vim-autosave插件的设置
