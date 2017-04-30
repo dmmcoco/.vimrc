@@ -95,15 +95,26 @@ set ruler"macvim默认不开启ruler,vim默认开启ruler
 let mapleader=","
 set number"显示行号
 syntax on"自动语法高亮,语法检验
-set autoindent"自动缩进
+set autoindent"自动缩进 lal niaho slk 
 set tabstop=4"tab键占4个字符
 
 "下面是插入模式的3个字符内移动的快捷键,结合vim-hardtime在vim-hardtime中设置去除Left,Down,Up,Right的禁用
 "超过当前光标所在位置的移动用f+j+s+字符+hint,或者f+j+w|b的方法移动(f+j为esc的map)
-inoremap <c-h> <Left>
-inoremap <c-j> <Down>
-inoremap <c-k> <Up>
-inoremap <c-l> <Right>
+"需要先查看是否有插件与<c-h>冲突,检查方法为:verbose imap <c-h>,发现autopairs插件有关于<c-h>的设置,注释掉就可以
+
+noremap <c-h> <left>
+noremap <c-j> <down>
+noremap <c-k> <up>
+noremap <c-l> <right>
+inoremap <c-h> <left>
+inoremap <c-j> <down>
+inoremap <c-k> <up>
+inoremap <c-l> <right>
+cnoremap <c-h> <left>
+cnoremap <c-j> <down>
+cnoremap <c-k> <up>
+cnoremap <c-l> <right>
+
 "inoremap <c-b> <esc>bi
 "inoremap <c-e> <esc>ei
 "inoremap <c-w> <esc>wi
