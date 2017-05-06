@@ -7,13 +7,8 @@ noremap h <S-Left>
 noremap l <S-Right> 
 source! /root/.vimperatorrc.local 
 " vim: set ft=vimperator:
-inoremap <C-h> <Up>
-inoremap <C-l> <Down>
-inoremap <C-j> <Left>
-inoremap <C-k> <Right>
 
-
-"set editor='/usr/share/mvim -f +<line> +"sil! call cursor(0, <column>)" <file>'
+"this proves not ok"set editor='/usr/share/mvim -f +<line> +"sil! call cursor(0, <column>)" <file>'
 set editor='/usr/share/mvim -g -f'
 
 set nextpattern=\s*下一页|下一张|下一篇|下页|后页\s*,^\bnext\b,\\bnext\\b,^>$,^(>& gt;|»)$,^(>|»),(>|»)$,\\bmore\\b
