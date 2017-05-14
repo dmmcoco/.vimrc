@@ -65,7 +65,18 @@ Plugin 'ascenator/L9', {'name': 'newL9'}
 "下面这个插件用来markdown实时预览
 Plugin 'iamcco/markdown-preview.vim'
 " All of your Plugins must be added before the following line
+
+"下面这个插件用来自动切换中英输入法,使用需要查看:
+"https://github.com/3xp10it/AutoIM
+Plugin '3xp10it/AutoIM'
+
 call vundle#end()            " required
+
+    
+"下面两行为AutoIM插件的设置
+let g:AutoIM_enim_id="com.apple.keylayout.ABC"
+let g:AutoIM_zhim_id='com.baidu.inputmethod.BaiduIM.wubi'
+
 
 "下面这行要注意,有可能以后要改
 filetype plugin indent on    " required
