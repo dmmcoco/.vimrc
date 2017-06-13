@@ -147,6 +147,7 @@ inoremap <c-e> <esc>A
 "方便操作
 map ; :
 map mm ZZ
+noremap ' `
 
 map sy "+y
 map sp "+p
