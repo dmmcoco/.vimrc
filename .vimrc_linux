@@ -169,8 +169,8 @@ set shiftwidth=4
 set ts=4
 set expandtab 
 
-"111字符长度换行用来适配博客md编写
-set textwidth=111
+"113字符长度换行用来适配博客md编写
+set textwidth=113
 
 "textwidth用于中文换行
 set formatoptions+=mM
@@ -363,7 +363,7 @@ let g:list_of_insert_keys = []
 
 
 
-"每行超过111字符长度后用不同颜色显示
+"每行超过113字符长度后用不同颜色显示
 augroup vimrc_autocmds
   autocmd CursorHold * highlight OverLength ctermbg=darkgrey guibg=#592929
   autocmd CursorHold * match OverLength /\%114v.*/
