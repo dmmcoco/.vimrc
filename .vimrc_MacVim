@@ -186,8 +186,8 @@ set shiftwidth=4
 set ts=4
 set expandtab
 
-"111字符长度换行用来适配博客md编写
-set textwidth=111
+"113字符长度换行用来适配博客md编写
+set textwidth=113
 
 "textwidth用于中文换行
 set formatoptions+=mM
@@ -383,6 +383,7 @@ augroup vimrc_autocmds
     autocmd CursorHold * highlight OverLength ctermbg=darkgrey guibg=#592929
     autocmd CursorHold * match OverLength /\%114v.*/
 augroup END
+
 
 "vim-autosave插件的设置
 ":let g:autosave_timer= 1
