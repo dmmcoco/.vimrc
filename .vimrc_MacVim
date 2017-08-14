@@ -64,6 +64,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'ascenator/L9', {'name': 'newL9'}
 "下面这个插件用来markdown实时预览
 Plugin 'iamcco/markdown-preview.vim'
+Plugin 'vim-syntastic/syntastic'
 " All of your Plugins must be added before the following line
 
 "下面这个插件用来自动切换中英输入法,使用需要查看:
@@ -341,7 +342,7 @@ set runtimepath+=~/.vim/bundle/YouCompleteMe
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif "离开插入模式后自动关闭预览窗口"
 let g:ycm_collect_identifiers_from_tags_files = 1           " 开启 YCM 基于标签引擎
 let g:ycm_collect_identifiers_from_comments_and_strings = 1 " 注释与字符串中的内容也用于补全
-let g:syntastic_ignore_files=[".*\.py$"]
+"let g:syntastic_ignore_files=[".*\.py$"]
 let g:ycm_seed_identifiers_with_syntax = 1                  " 语法关键字补全
 let g:ycm_complete_in_comments = 1
 let g:ycm_confirm_extra_conf = 0
@@ -399,3 +400,15 @@ nmap <silent> <F6> <Plug>StopMarkdownPreview    " 普通模式
 
 imap <silent> <F6> <Plug>StopMarkdownPreview    " 插入模式
 "set backupcopy=yes
+"
+"
+"下面是vim-syntastic/syntastic相关的设置
+"记得要pip(&3) install flake8
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
