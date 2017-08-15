@@ -40,6 +40,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'felixhummel/setcolors.vim'
 "下面这个插件用来强制改变jjjjjjjjjjkkkkkkkkkkkllllllll的坏习惯
 Plugin 'takac/vim-hardtime'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 "下面这个插件利用vim8的时钟特性自动保存文件,默认第5分钟保存,后来发现这个插件是备份文件,不保存正在编辑的文件,于
 "是弃用 
 "Plugin 'chrisbra/vim-autosave'
@@ -64,7 +66,9 @@ Plugin 'ascenator/L9', {'name': 'newL9'}
 "下面这个插件用来markdown实时预览
 Plugin 'iamcco/markdown-preview.vim'
 "下面这个插件用来静态检查语法
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
+"下面这个插件用来静态检查语法,比syntastic好用
+Plugin 'w0rp/ale'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -102,10 +106,10 @@ set ignorecase smartcase
 "超过当前光标所在位置的移动用f+j+s+字符+hint,或者f+j+w|b的方法移动(f+j为esc的map)
 "需要先查看是否有插件与<c-h>冲突,检查方法为:verbose imap <c-h>,发现auto-pairs插件有关于<c-h>的设置,注释掉就可以
 
-noremap <c-h> <left>
-noremap <c-j> <down>
-noremap <c-k> <up>
-noremap <c-l> <right>
+"noremap <c-h> <left>
+"noremap <c-j> <down>
+"noremap <c-k> <up>
+"noremap <c-l> <right>
 inoremap <c-h> <left>
 inoremap <c-j> <down>
 inoremap <c-k> <up>
@@ -385,14 +389,12 @@ imap <silent> <F5> <Plug>MarkdownPreview        " 插入模式
 nmap <silent> <F6> <Plug>StopMarkdownPreview    " 普通模式
 imap <silent> <F6> <Plug>StopMarkdownPreview    " 插入模式
 
-"下面是vim-syntastic/syntastic相关的设置
-"记得要pip(&3) install flake8
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"下面设置airline-theme
+let g:airline_theme='bubblegum'
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_python_python_exec = 'python3'
+
+"下面设置w0rp/ale
+let g:airline#extensions#ale#enabled = 1
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
