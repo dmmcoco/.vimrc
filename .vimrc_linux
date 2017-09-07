@@ -1,7 +1,6 @@
-
 "下面这段是vundle要求的,加到vimrc的开头
 """"""""""""""for vundle""""""""""""""""
-set nocompatible              " be iMproved, required 
+set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -33,6 +32,7 @@ Plugin 'Yggdroot/indentLine'
 "下面用vundle安装vim中文文档
 Plugin 'vimcn/vimcdoc'
 "下面用vundle安装ctrlp快速打开文件插件,<c-p>
+"http://www.cnblogs.com/sammei/p/4978289.html
 Plugin 'ctrlpvim/ctrlp.vim'
 "下面用vundle安装配色插件
 Plugin 'flazz/vim-colorschemes'
@@ -40,10 +40,28 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'felixhummel/setcolors.vim'
 "下面这个插件用来强制改变jjjjjjjjjjkkkkkkkkkkkllllllll的坏习惯
 Plugin 'takac/vim-hardtime'
+"下面两个插件用来美化状态栏
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+"下面2个用来安装fzf插件
+"https://github.com/junegunn/fzf.vim
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
+"下面这个用来安装undotree插件
+"https://github.com/mbbill/undotree
+Plugin 'mbbill/undotree'
+"下面安装彩虹括号插件
+Plugin 'luochen1990/rainbow'
+"下面这个插件用来安装快速编辑对齐插件(非代码对齐)
+"http://www.cnblogs.com/juandx/p/5630837.html
+Plugin 'junegunn/vim-easy-align'
+"下面安装ack正则工具
+"要记得安装https://github.com/ggreer/the_silver_searcher
+Plugin 'mileszs/ack.vim'
+
+
 "下面这个插件利用vim8的时钟特性自动保存文件,默认第5分钟保存,后来发现这个插件是备份文件,不保存正在编辑的文件,于
-"是弃用 
+"是弃用
 "Plugin 'chrisbra/vim-autosave'
 "下面这个插件用来安装一个css配色方案插件,后来觉得没有什么作用,不如直接用evening配色方案
 "Plugin 'ap/vim-css-color'
@@ -67,10 +85,22 @@ Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'iamcco/markdown-preview.vim'
 "下面这个插件用来静态检查语法
 "Plugin 'vim-syntastic/syntastic'
-"下面这个插件用来静态检查语法,比syntastic好用
+"下面这个插件比syntastic更好,但是要vim8以上才可用
 Plugin 'w0rp/ale'
+"下面这个插件用来高亮光标所在区域
+"https://github.com/junegunn/limelight.vim
+Plugin 'junegunn/limelight.vim'
 " All of your Plugins must be added before the following line
+
+"下面这个插件用来自动切换中英输入法,使用需要查看:
+"https://github.com/3xp10it/AutoIM
+"Plugin '3xp10it/AutoIM'
+"Plugin 'vimim/vimim'
+"下面这个插件并不好用
+"Plugin 'ybian/smartim'
+
 call vundle#end()            " required
+
 
 "下面这行要注意,有可能以后要改
 filetype plugin indent on    " required
@@ -398,3 +428,16 @@ let g:airline#extensions#ale#enabled = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+"下面设置undotree
+if has("persistent_undo")
+    set undodir=~/.undodir/
+    set undofile
+endif
+
+"下面设置彩虹括号插件
+let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+
+"下面设置ack.vim插件使用ag (The Silver Searcher) 
+if executable('ag') 
+    let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
