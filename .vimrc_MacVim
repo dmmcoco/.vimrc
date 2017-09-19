@@ -76,7 +76,7 @@ Plugin 'mileszs/ack.vim'
 
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
@@ -161,7 +161,7 @@ cnoremap <c-l> <right>
 "下面设置插入模式下的单词跳转并进入插入模式
 
 inoremap <c-b> <esc>lbi
-inoremap <c-e> <esc>lei
+"inoremap <c-e> <esc>lei
 inoremap <c-w> <esc>lwi
 
 "<c-0>无效,于是用<c-a>
