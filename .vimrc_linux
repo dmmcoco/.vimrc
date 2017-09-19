@@ -151,14 +151,9 @@ cnoremap <c-l> <right>
 
 
 
-"inoremap <c-b> <esc>bi
-"inoremap <c-e> <esc>ei
-"inoremap <c-w> <esc>wi
-"下面设置插入模式下的单词跳转并进入插入模式
-"设置为leader而不是ctrl是因为ctrl失败,且tmux的修饰键为<ctrl+b>
-imap <leader>b <esc>lbi
-imap <leader>e <esc>lei
-imap <leader>w <esc>lwi
+inoremap <c-b> <esc>lbi
+inoremap <c-e> <esc>lei
+inoremap <c-w> <esc>lwi
 
 "<c-0>无效,于是用<c-a>
 "ctrl+a在插入模式下跳到当前行开关并进入插入模式
