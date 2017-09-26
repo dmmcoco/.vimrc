@@ -384,7 +384,9 @@ nnoremap <c-j> :YcmCompleter GoToDefinitionElseDeclaration<CR>|     " 跳转到�
 "let g:ycm_min_num_of_chars_for_completion=2                 " 从第2个键入字符就开始罗列匹配项
 """""""""end of YCM""""""""""
 "vim-colorschemes插件配色
-colorscheme evening
+"colorscheme evening
+"由于使用https://draculatheme.com/主题,这里需要注释掉上面的colorscheme插件的设置
+
 "setcolors插件设置自动换配色,vim-colorschemes插件相当于配色库,setcolor插件用于变换其他配色,如果不安装
 "vim-colorschemes插件只安装setcolor插件则没有好的效果
 "考虑到对眼睛不好,暂时关闭下面的自动换色
