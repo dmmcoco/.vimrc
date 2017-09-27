@@ -43,7 +43,7 @@ Plugin 'takac/vim-hardtime'
 "下面两个插件用来美化状态栏
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-"下面2个用来安装fzf插件
+"下面2个用来安装fzf插件,fzf不仅要装到vim中,还要装到系统中,安装方法https://github.com/junegunn/fzf
 "https://github.com/junegunn/fzf.vim
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
