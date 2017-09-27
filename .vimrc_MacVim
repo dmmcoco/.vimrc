@@ -36,6 +36,8 @@ Plugin 'vimcn/vimcdoc'
 Plugin 'ctrlpvim/ctrlp.vim'
 "下面用vundle安装配色插件
 Plugin 'flazz/vim-colorschemes'
+"下面安装经典主题,比上面的好
+Plugin 'dracula/vim'
 "下面这个插件用来快速切换配色<f8>
 Plugin 'felixhummel/setcolors.vim'
 "下面这个插件用来强制改变jjjjjjjjjjkkkkkkkkkkkllllllll的坏习惯
