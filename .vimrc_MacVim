@@ -1,6 +1,9 @@
 "下面这段是vundle要求的,加到vimrc的开头
 """"""""""""""for vundle""""""""""""""""
 set nocompatible              " be iMproved, required
+"用了fish shell后要加下面一行,要不然在运行:BundleInstall时会出错,不用fish shell时将这行删掉
+set shell=/bin/bash
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -62,24 +65,6 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'mileszs/ack.vim'
 
 
-"下面这个插件利用vim8的时钟特性自动保存文件,默认第5分钟保存,后来发现这个插件是备份文件,不保存正在编辑的文件,于
-"是弃用
-"Plugin 'chrisbra/vim-autosave'
-"下面这个插件用来安装一个css配色方案插件,后来觉得没有什么作用,不如直接用evening配色方案
-"Plugin 'ap/vim-css-color'
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-
-" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 Plugin 'ascenator/L9', {'name': 'newL9'}
@@ -93,13 +78,6 @@ Plugin 'w0rp/ale'
 "https://github.com/junegunn/limelight.vim
 Plugin 'junegunn/limelight.vim'
 " All of your Plugins must be added before the following line
-
-"下面这个插件用来自动切换中英输入法,使用需要查看:
-"https://github.com/3xp10it/AutoIM
-"Plugin '3xp10it/AutoIM'
-"Plugin 'vimim/vimim'
-"下面这个插件并不好用
-"Plugin 'ybian/smartim'
 
 call vundle#end()            " required
 
