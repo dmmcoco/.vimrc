@@ -77,9 +77,10 @@ Plugin 'w0rp/ale'
 "下面这个插件用来高亮光标所在区域
 "https://github.com/junegunn/limelight.vim
 Plugin 'junegunn/limelight.vim'
-" All of your Plugins must be added before the following line
 "由于squirrel不好用了,后来换成下面这个实现自动切换中英文输入法
 Plugin 'CodeFalling/fcitx-vim-osx'
+
+" All of your Plugins must be added before the following line
 call vundle#end()            " required
 
 
