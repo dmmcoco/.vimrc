@@ -78,7 +78,8 @@ Plugin 'w0rp/ale'
 "https://github.com/junegunn/limelight.vim
 Plugin 'junegunn/limelight.vim'
 " All of your Plugins must be added before the following line
-
+"由于squirrel不好用了,后来换成下面这个实现自动切换中英文输入法
+Plugin 'CodeFalling/fcitx-vim-osx'
 call vundle#end()            " required
 
 
