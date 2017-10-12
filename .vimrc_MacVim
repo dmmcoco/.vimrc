@@ -196,7 +196,7 @@ set ts=4
 set expandtab
 
 "113字符长度换行用来适配博客md编写
-set textwidth=113
+autocmd FileType markdown setlocal textwidth=113
 
 "textwidth用于中文换行
 set formatoptions+=mM
